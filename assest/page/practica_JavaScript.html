@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UFT-8">
+<meta charset="UFT-16">
+
+<meta name="viewport" content="width=device-width, initial-sacale=1.0">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta name="author" content="Kimi2123">
+
+<!-- manera externa de incorporar estilos css -->
+<link rel="stylesheet" href="../css/styles.css">
+<title> Practica JavaScript </title>
+<script src="script.js"></script>
+
+</head>
+
+<body style="background-color: white">
+
+<h1> <i>Como se encuentran mi gente </i></h1>
+<!-- insercion de JavaScript dentro de una etiqueta -->
+<p id="demo"> Texto original </p>
+<button onClick="cambiarTexto2()"> Cambiar original </button>
+
+<p id="texto"> Texto inicial </p>
+<h1> Haz click en este bton para cambiar el estilo </h1>
+<button onClick="cambiarEstilo()">Cambiar estilo</button>
+
+<h1> Haz click en este bton para cambiar el texto </h1>
+<button onClick="cambiarTexto()"> Cambiar texto </button>
+	<script>
+		alert('Bienvenido a la practica con JavaScript');
+		
+		
+		function cambiarTexto2(){
+			document.getElementById('demo').innerHTML = 'Texto modificado con JavaScript y mas';
+			document.getElementById('demo').style.color = 'red';
+			document.getElementById('demo').style.fontSize = '100px';
+		}
+		
+		function cambiarTexto(){
+			document.getElementById('texto').innerHTML = 'Texto cambiado';
+		}
+		
+		function cambiarEstilo(){
+		
+			document.getElementById('texto').style.color = 'red';
+			document.getElementById('texto').style.fontSize = '20px';
+		}
+		
+		function moverArriba(){
+			let id = null;
+			const elemento = document.getElementById("animate");
+			let pos = 0;
+			clearInterval(id);
+			id = setInterval(frame, 5);
+			function frame() {
+				pos++;
+				elemento.style.top = pos + "py";
+			}
+		}
+	</script>
+	<br>
+	<p> Hola mi gente tamo en japon </p>
+	<button onclick="alert('Hiciste click!')"> que pasara aqui </button><br>
+	
+	<button onClick="moverArriba()">Mover abajo</button>
+	<button onClick="moverArriba()">Mover arriba</button>
+	<button onClick="moverArriba()">Mover izquierda</button>
+	<button onClick="moverArriba()">Mover derecha</button>
+	<div id="container">
+		<div id="animate"></div>
+	</div>
+	
+</body>
